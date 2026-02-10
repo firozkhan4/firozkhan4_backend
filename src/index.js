@@ -5,6 +5,7 @@ import cors from "cors"
 
 
 import certificateRoutes from "./modules/certificates/route/certificateRoute.js"
+import blogRoutes from "./modules/blogs/route/blogRoute.js"
 
 const PORT = config.PORT
 const app = express()
@@ -19,6 +20,7 @@ app.use(express.json())
 app.get("/", (req, res) => { res.json({ up: process.uptime() }) })
 
 app.use("/api/certificates", certificateRoutes)
+app.use("/api/blogs", blogRoutes)
 
 
 connectDB()
